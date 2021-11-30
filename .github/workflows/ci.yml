@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm meson clang lld
+      - name: Configure
+        run: meson setup builddir --cross-file ./src/x86_64-unknown-uefi.mesoncross.ini
+      - name: Build
+        working-directory: builddir
+        run: ninja
