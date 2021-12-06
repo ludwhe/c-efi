@@ -22,11 +22,11 @@ typedef struct CEfiPixelBitmask {
 } CEfiPixelBitmask;
 
 typedef enum CEfiGraphicsPixelFormat {
-        C_PIXEL_RED_GREEN_BLUE_RESERVED_8_BIT_PER_COLOR,
-        C_PIXEL_BLUE_GREEN_RED_RESERVED_8_BIT_PER_COLOR,
-        C_PIXEL_BIT_MASK,
-        C_PIXEL_BLT_ONLY,
-        C_PIXEL_FORMAT_MAX
+        C_EFI_PIXEL_RED_GREEN_BLUE_RESERVED_8_BIT_PER_COLOR,
+        C_EFI_PIXEL_BLUE_GREEN_RED_RESERVED_8_BIT_PER_COLOR,
+        C_EFI_PIXEL_BIT_MASK,
+        C_EFI_PIXEL_BLT_ONLY,
+        C_EFI_PIXEL_FORMAT_MAX
 } CEfiGraphicsPixelFormat;
 
 typedef struct CEfiGraphicsOutputProtocolModeInformation {
