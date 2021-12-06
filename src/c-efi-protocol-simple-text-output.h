@@ -91,7 +91,7 @@ typedef struct CEfiSimpleTextOutputProtocol {
                 CEfiBool visible
         );
         CEfiSimpleTextOutputMode *mode;
-} CEfiSimpleTextOutpuProtocol;
+} CEfiSimpleTextOutputProtocol;
 
 #ifdef __cplusplus
 }
