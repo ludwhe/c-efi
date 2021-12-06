@@ -26,6 +26,7 @@ extern "C" {
 #include <c-efi-protocol-simple-text-input.h>
 #include <c-efi-protocol-simple-text-input-ex.h>
 #include <c-efi-protocol-simple-text-output.h>
+#include <c-efi-protocol-graphics-output.h>
 
 #ifdef __cplusplus
 }

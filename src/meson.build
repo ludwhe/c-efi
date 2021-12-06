@@ -34,6 +34,7 @@ if not meson.is_subproject()
                 'c-efi-protocol-device-path-utility.h',
                 'c-efi-protocol-loaded-image.h',
                 'c-efi-protocol-loaded-image-device-path.h',
+                'c-efi-protocol-graphics-output.h',
         )
 
         mod_pkgconfig.generate(
