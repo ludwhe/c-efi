@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+#include <c-efi-base.h>
+
 #define C_EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID C_EFI_GUID(0x9042a9de, 0x23dc, 0x4a38, 0x96, 0xfb, 0x7a, 0xde, 0xd0, 0x80, 0x51, 0x6a)
 
 typedef struct CEfiPixelBitmask {
@@ -40,9 +42,9 @@ typedef struct CEfiGraphicsOutputProtocolMode {
         CEfiU32 max_mode;
         CEfiU32 mode;
         CEfiGraphicsOutputProtocolModeInformation *info;
-        UINTN size_of_info;
+        CEfiUSize size_of_info;
         CEfiPhysicalAddress frame_buffer_base;
-        UINTN frame_buffer_size;
+        CEfiUSize frame_buffer_size;
 } CEfiGraphicsOutputProtocolMode;
 
 typedef struct CEfiGraphicsOutputBltPixel {
@@ -64,7 +66,7 @@ typedef struct CEfiGraphicsOutputProtocol {
         CEfiStatus (CEFICALL *query_mode) (
                 CEfiGraphicsOutputProtocol *this_,
                 CEfiU32 mode_number,
-                UINTN *size_of_info,
+                CEfiUSize *size_of_info,
                 CEfiGraphicsOutputProtocolModeInformation **info
         );
         CEfiStatus (CEFICALL *set_mode) (
@@ -75,13 +77,13 @@ typedef struct CEfiGraphicsOutputProtocol {
                 CEfiGraphicsOutputProtocol *this_,
                 CEfiGraphicsOutputBltPixel *blt_buffer,
                 CEfiGraphicsOutputBltOperation blt_operation,
-                UINTN source_x,
-                UINTN source_y,
-                UINTN destination_x,
-                UINTN destination_y,
-                UINTN width,
-                UINTN height,
-                UINTN delta
+                CEfiUSize source_x,
+                CEfiUSize source_y,
+                CEfiUSize destination_x,
+                CEfiUSize destination_y,
+                CEfiUSize width,
+                CEfiUSize height,
+                CEfiUSize delta
         );
         CEfiGraphicsOutputProtocolMode *mode;
 } CEfiGraphicsOutputProtocol;
