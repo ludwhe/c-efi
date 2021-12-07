@@ -99,6 +99,7 @@ typedef struct CEfiDevicePathProtocol CEfiDevicePathProtocol;
 typedef struct CEfiSimpleTextInputProtocol CEfiSimpleTextInputProtocol;
 typedef struct CEfiSimpleTextOutputProtocol CEfiSimpleTextOutputProtocol;
 typedef struct CEfiGraphicsOutputProtocol CEfiGraphicsOutputProtocol;
+typedef struct CEfiAcpiTableProtocol CEfiAcpiTableProtocol;
 typedef struct CEfiSystemTable CEfiSystemTable;
 
 /**
