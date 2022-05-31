@@ -28,6 +28,7 @@ extern "C" {
 #include <c-efi-protocol-simple-text-output.h>
 #include <c-efi-protocol-graphics-output.h>
 #include <c-efi-protocol-acpi-table.h>
+#include <c-efi-protocol-serial-io.h>
 
 #ifdef __cplusplus
 }
