@@ -45,29 +45,29 @@ typedef enum CEfiStopBitsType {
 } CEfiStopBitsType;
 
 typedef struct CEfiSerialIOMode {
-	uint32_t control_mask;
-	uint32_t timeout;
-	uint64_t baud_rate;
-	uint32_t receive_fifo_depth;
-	uint32_t data_bits;
-	uint32_t parity;
-	uint32_t stop_bits;
+	CEfiU32 control_mask;
+	CEfiU32 timeout;
+	CEfiU64 baud_rate;
+	CEfiU32 receive_fifo_depth;
+	CEfiU32 data_bits;
+	CEfiU32 parity;
+	CEfiU32 stop_bits;
 } CEfiSerialIOMode;
 
 typedef struct CEfiSerialIOProtocol CEfiSerialIOProtocol;
 
 typedef struct CEfiSerialIOProtocol {
-	uint32_t revision;
-	CEfiStatus(C_EFICALL *reset)(CEfiSerialIOProtocol *this_);
-	CEfiStatus(C_EFICALL *set_attributes)(CEfiSerialIOProtocol *this_, uint64_t baud_rate,
-					     uint32_t receive_fifo_depth, uint32_t timeout,
-					     CEfiParityType parity, uint8_t data_bits,
+	CEfiU32 revision;
+	CEfiStatus(CEFICALL *reset)(CEfiSerialIOProtocol *this_);
+	CEfiStatus(CEFICALL *set_attributes)(CEfiSerialIOProtocol *this_, CEfiU64 baud_rate,
+					     CEfiU32 receive_fifo_depth, CEfiU32 timeout,
+					     CEfiParityType parity, CEfiU8 data_bits,
 					     CEfiStopBitsType stop_bits);
-	CEfiStatus(C_EFICALL *set_control)(CEfiSerialIOProtocol *this_, uint32_t control);
-	CEfiStatus(C_EFICALL *get_control)(CEfiSerialIOProtocol *this_, uint32_t *control);
-	CEfiStatus(C_EFICALL *write)(CEfiSerialIOProtocol *this_, C_EFIUSize *buffer_size,
+	CEfiStatus(CEFICALL *set_control)(CEfiSerialIOProtocol *this_, CEfiU32 control);
+	CEfiStatus(CEFICALL *get_control)(CEfiSerialIOProtocol *this_, CEfiU32 *control);
+	CEfiStatus(CEFICALL *write)(CEfiSerialIOProtocol *this_, CEfiUSize *buffer_size,
 				    void *buffer);
-	CEfiStatus(C_EFICALL *read)(CEfiSerialIOProtocol *this_, C_EFIUSize *buffer_size,
+	CEfiStatus(CEFICALL *read)(CEfiSerialIOProtocol *this_, CEfiUSize *buffer_size,
 				   void *buffer);
 	CEfiSerialIOMode *mode;
 
